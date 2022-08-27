@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PatientService {
-    List<Patient> findAll();
+    List<Patient> findAllPagination(Integer page);
+    List<Patient> findAllNoPagination();
+    List<Patient> search(String doctor, String name, String reason, String method, Integer page);
     Optional<Patient> findById(Integer id);
     void save(Patient patient);
     void update(Patient patient);

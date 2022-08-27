@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient';
 
@@ -11,16 +11,25 @@ const API_URL = `${environment.apiUrl}`;
   providedIn: 'root'
 })
 export class PatientService {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Patient[]> {
-    return this.http.get<Patient[]>(API_URL + '/api/v1/patient');
+  getAll(page: number): Observable<Patient[]> {
+    return this.http.get<Patient[]>(API_URL + '/api/v1/patient/list?page=' + page);
+  }
+
+  getAllNoPagination(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(API_URL + '/api/v1/patient/list-no-pagination');
   }
 
   save(patient: Patient): Observable<Patient> {
-    return this.http.post<Patient>(API_URL + '/api/v1/patient', patient);
+    return this.http.post<Patient>(API_URL + '/api/v1/patient', JSON.stringify(patient), this.httpOptions);
   }
 
   findById(id: number): Observable<Patient> {
@@ -35,7 +44,7 @@ export class PatientService {
     return this.http.delete<Patient>(`${API_URL}/api/v1/patient/${id}`);
   }
 
-  find(keyword: string, keyword2: string): Observable<Patient[]> {
-    return this.http.get<Patient[]>(API_URL + '/patient?doctor_like=' + keyword + '&patienter.name_like=' + keyword2);
+  find(page: number, doctor: string, name: string, reason: string, method: string): Observable<Patient[]> {
+    return this.http.get<Patient[]>(API_URL + '/api/v1/patient/search?page=' + page + '&doctor=' + doctor + '&name=' + name + '&reason=' + reason + '&method=' + method);
   }
 }

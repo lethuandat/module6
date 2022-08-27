@@ -19,6 +19,10 @@ public class Patienter {
     public Patienter() {
     }
 
+    public Patienter(Integer id) {
+        this.id = id;
+    }
+
     public Patienter(Integer id, String name, List<Patient> patients) {
         this.id = id;
         this.name = name;

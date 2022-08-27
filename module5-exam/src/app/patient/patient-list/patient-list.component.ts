@@ -13,12 +13,15 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class PatientListComponent implements OnInit {
   patient: Patient[] = [];
+  patientNoPagination: Patient[] = [];
   patienter: Patienter[] = [];
   deleteId: number;
-  page = 1;
-  pageSize = 5;
-  keyword = '';
-  keyword2 = '';
+  indexPagination = 1;
+  totalPagination: number;
+  doctor = '';
+  name = '';
+  reason: '';
+  method: '';
 
   constructor(private patientService: PatientService,
               private patienterService: PatienterService,
@@ -32,11 +35,21 @@ export class PatientListComponent implements OnInit {
 
 
   getAll(): void {
-    this.patientService.getAll().subscribe(patient => {
+    this.patientService.getAll(0).subscribe(patient => {
       this.patient = patient;
     });
+
     this.patienterService.getAll().subscribe(patienter => {
       this.patienter = patienter;
+    });
+
+    this.patientService.getAllNoPagination().subscribe(patient => {
+
+      this.patientNoPagination = patient;
+
+      if ((this.patientNoPagination.length % 5) !== 0) {
+        this.totalPagination = (Math.round(this.patientNoPagination.length / 5)) + 1;
+      }
     });
   }
 
@@ -57,10 +70,57 @@ export class PatientListComponent implements OnInit {
   }
 
   search() {
-    this.patientService.find(this.keyword, this.keyword2).subscribe(patient => {
+    this.patientService.find((this.indexPagination * 5) - 5, this.doctor, this.name, this.reason, this.method).subscribe(patient => {
+      console.log(patient);
       this.patient = patient;
-      this.keyword = '';
-      this.keyword2 = '';
+      this.doctor = '';
+      this.name = '';
+      this.reason = '';
+      this.method = '';
+    });
+  }
+
+  findPagination() {
+    this.patientService.getAll((this.indexPagination * 5) - 5).subscribe(patient => {
+      this.patient = patient;
+    });
+  }
+
+  indexPaginationChange(value: number) {
+    this.indexPagination = value;
+  }
+
+  firstPage() {
+    this.indexPagination = 1;
+    this.ngOnInit();
+  }
+
+  nextPage() {
+    this.indexPagination = this.indexPagination + 1;
+    if (this.indexPagination > this.totalPagination) {
+      this.indexPagination = this.indexPagination - 1;
+    }
+    this.patientService.getAll((this.indexPagination * 5) - 5).subscribe(patient => {
+      this.patient = patient;
+    });
+  }
+
+  previousPage() {
+    this.indexPagination = this.indexPagination - 1;
+    if (this.indexPagination === 0) {
+      this.indexPagination = 1;
+      this.ngOnInit();
+    } else {
+      this.patientService.getAll((this.indexPagination * 5) - 5).subscribe(patient => {
+        this.patient = patient;
+      });
+    }
+  }
+
+  lastPage() {
+    this.indexPagination = this.patientNoPagination.length / 5;
+    this.patientService.getAll((this.indexPagination * 5) - 5).subscribe(patient => {
+      this.patient = patient;
     });
   }
 }

@@ -14,8 +14,14 @@ import java.util.Optional;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
+    @Query(value = "select * from patient limit :page, 5", nativeQuery = true)
+    List<Patient> findAllPagination(@Param("page") Integer page);
+
     @Query(value = "select * from patient", nativeQuery = true)
-    List<Patient> findAll();
+    List<Patient> findAllNoPagination();
+
+    @Query(value = "select patient.* from patient join patienter on patient.patienter_id = patienter.id where patient.doctor like %:doctor% and patienter.name like %:name% and patient.reason like %:reason% and patient.method like %:method% limit :page, 5", nativeQuery = true)
+    List<Patient> search(@Param("doctor") String doctor, @Param("name") String name, @Param("reason") String reason, @Param("method") String method, @Param("page") Integer page);
 
     @Query(value = "select * from patient where id = :id", nativeQuery = true)
     Optional<Patient> findById(@Param("id") Integer id);
