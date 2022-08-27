@@ -1,0 +1,160 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 mt-4">
+      <div class="container-fluid">
+        <div class="row pb-3">
+          <img src="../../../assets/images/banner2.jpg" alt="">
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row pb-3">
+          <img src="../../../assets/images/banner.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-10 mt-4">
+      <div class="container-fluid">
+        <div class="row">
+          <h3 align="center">CHỈNH SỬA THÔNG TIN BỆNH ÁN</h3>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="patientForm" (ngSubmit)="update(id)">
+              <table class="table" cellpadding="5">
+                <tr>
+                  <th>Mã bệnh án:</th>
+                  <td>
+                    <input type="text" disabled formControlName="id" class="form-control">
+                  </td>
+                </tr>
+                <tr>
+                  <th>Mã bệnh nhân:</th>
+                  <td>
+                    <input type="text" disabled formControlName="patienter"
+                           class="form-control">
+                  </td>
+                </tr>
+                <tr>
+                  <th>Tên bệnh nhân:</th>
+                  <td>
+                    <input type="text" formControlName="name"
+                           class="form-control">
+                    <p
+                      *ngIf="patientForm.get('name').hasError('required') && patientForm.get('name').touched && patientForm.get('name').dirty">
+                      *Tên bệnh nhân không được bỏ trống</p>
+                    <p
+                      *ngIf="patientForm.get('name').hasError('pattern') && patientForm.get('name').touched && patientForm.get('name').dirty">
+                      *Tên bệnh nhân không được chứa kí tự số</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Ngày nhập viện:</th>
+                  <td>
+                    <input type="date" formControlName="dayIn" class="form-control">
+                    <p
+                      *ngIf="patientForm.get('dayIn').hasError('required') && patientForm.controls.dayIn.touched && patientForm.controls.dayIn.dirty">
+                      *Ngày nhập viện không được bỏ trống</p>
+                    <p
+                      *ngIf="patientForm.get('dayIn').hasError('dayInError') && patientForm.controls.dayIn.touched && patientForm.controls.dayIn.dirty">
+                      *Ngày nhập viện phải nhỏ hơn ngày hiện tại</p>
+                    <p
+                      *ngIf="patientForm.hasError('dayError') && patientForm.controls.dayIn.touched && patientForm.controls.dayIn.dirty">
+                      *Ngày nhập viện không được lớn hơn ngày ra viện</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Ngày ra viện:</th>
+                  <td>
+                    <input type="date" formControlName="dayOut" class="form-control">
+                    <p
+                      *ngIf="patientForm.get('dayOut').hasError('required') && patientForm.controls.dayOut.touched && patientForm.controls.dayOut.dirty">
+                      *Ngày nhập viện không được bỏ trống</p>
+                    <p
+                      *ngIf="patientForm.get('dayOut').hasError('dayOutError') && patientForm.controls.dayOut.touched && patientForm.controls.dayOut.dirty">
+                      *Ngày ra viện phải nhỏ hơn ngày hiện tại</p>
+                    <p
+                      *ngIf="patientForm.hasError('dayError') && patientForm.controls.dayOut.touched && patientForm.controls.dayOut.dirty">
+                      *Ngày ra viện không được nhỏ hơn nhập viện</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Lí do nhập viện:</th>
+                  <td>
+                    <textarea type="text" formControlName="reason" class="form-control"></textarea>
+                    <p
+                      *ngIf="patientForm.get('reason').hasError('required') && patientForm.get('reason').touched && patientForm.get('reason').dirty">
+                      *Lí do nhập viện không được bỏ trống</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Phương pháp điều trị:</th>
+                  <td>
+                    <textarea type="text" formControlName="method" class="form-control"></textarea>
+                    <p
+                      *ngIf="patientForm.get('method').hasError('required') && patientForm.get('method').touched && patientForm.get('method').dirty">
+                      *Phương pháp điều trị không được bỏ trống</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Bác sĩ điều trị:</th>
+                  <td>
+                    <input type="text" formControlName="doctor" class="form-control">
+                    <p
+                      *ngIf="patientForm.get('doctor').hasError('required') && patientForm.get('doctor').touched && patientForm.get('doctor').dirty">
+                      *Tên bác sĩ điều trị không được bỏ trống</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <button type="button" class="btn btn-outline-primary"
+                            data-bs-toggle="modal" data-bs-target="#backModal">
+                      Quay lại
+                    </button>
+                  </td>
+
+                  <td align="left">
+                    <button [disabled]="patientForm.invalid" class="btn btn-outline-primary">
+                      Cập nhật
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                           fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                        <path
+                          d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="backModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <h5 class="modal-title text-white" id="backModalLabel">Thông báo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span>Quay lại danh sách hiển thị? </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <a routerLink="/patient/list">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Quay lại</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+{
+  "patienter": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn Nam"
+    },
+    {
+      "id": 2,
+      "name": "Lê Văn Long Hoa Hoa"
+    },
+    {
+      "id": 3,
+      "name": "Đỗ Thị Linh Linh"
+    },
+    {
+      "id": 4,
+      "name": "Trần Hải"
+    },
+    {
+      "id": 5,
+      "name": "Lê Thị Xuân"
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "patienter": {
+        "id": 1,
+        "name": "Nguyễn Văn Nam"
+      },
+      "dayIn": "2022-08-11",
+      "dayOut": "2022-08-11",
+      "reason": "Ruột thừa",
+      "method": "Mổ",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 2,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2022-08-11",
+      "dayOut": "2022-08-11",
+      "reason": "Thận mạn tính",
+      "method": "Chạy thận",
+      "doctor": "Nguyễn Thị Lý"
+    },
+    {
+      "id": 3,
+      "patienter": {
+        "id": 2,
+        "name": "Lê Văn Long Hoa Hoa"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 5,
+      "patienter": {
+        "id": 3,
+        "name": "Đỗ Thị Linh Linh"
+      },
+      "dayIn": "2022-08-16",
+      "dayOut": "2022-08-23",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang Quân"
+    },
+    {
+      "id": 7,
+      "patienter": {
+        "id": 2,
+        "name": "Lê Văn Long Hoa Hoa"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Gãy tay",
+      "method": "Bó bột",
+      "doctor": "Lê Thị Hà Hà"
+    },
+    {
+      "id": 8,
+      "patienter": {
+        "id": 2,
+        "name": "Lê Văn Long"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 9,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 10,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Suy gan",
+      "method": "Chuyển viện",
+      "doctor": "Trần Cẩm"
+    },
+    {
+      "id": 11,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 12,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 13,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Đa chấn thương do tai nạn giao thông",
+      "method": "Băng bó",
+      "doctor": "Mai Văn Ngọc"
+    },
+    {
+      "id": 14,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "id": 15,
+      "patienter": {
+        "id": 5,
+        "name": "Lê Thị Xuân"
+      },
+      "dayIn": "2021-12-11",
+      "dayOut": "2021-12-11",
+      "reason": "Ung thư",
+      "method": "Xạ trị, hóa trị",
+      "doctor": "Lê Quang"
+    },
+    {
+      "patienter": {
+        "id": 1,
+        "name": "Nguyễn Văn Nam"
+      },
+      "dayIn": "2022-08-18",
+      "dayOut": "2022-08-24",
+      "reason": "Covid 19",
+      "method": "Cách ly theo dõi",
+      "doctor": "Nguyễn Quỳnh",
+      "id": 16
+    }
+  ]
+}
