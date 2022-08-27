@@ -1,9 +1,11 @@
 package com.codegym.patient_management.dto;
 
+import com.codegym.patient_management.model.Patienter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -11,8 +13,8 @@ import java.time.format.DateTimeFormatter;
 public class PatientDto implements Validator {
     private Integer id;
 
-    @NotBlank(message = "*Không được để trống!")
-    private String patienter;
+    @NotNull(message = "*Không được để trống!")
+    private Patienter patienter;
 
     @NotBlank(message = "*Không được để trống!")
     private String dayIn;
@@ -32,7 +34,7 @@ public class PatientDto implements Validator {
     public PatientDto() {
     }
 
-    public PatientDto(Integer id, String patienter, String dayIn, String dayOut, String reason, String method, String doctor) {
+    public PatientDto(Integer id, Patienter patienter, String dayIn, String dayOut, String reason, String method, String doctor) {
         this.id = id;
         this.patienter = patienter;
         this.dayIn = dayIn;
@@ -50,11 +52,11 @@ public class PatientDto implements Validator {
         this.id = id;
     }
 
-    public String getPatienter() {
+    public Patienter getPatienter() {
         return patienter;
     }
 
-    public void setPatienter(String patienter) {
+    public void setPatienter(Patienter patienter) {
         this.patienter = patienter;
     }
 

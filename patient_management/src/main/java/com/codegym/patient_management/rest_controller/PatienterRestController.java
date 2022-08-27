@@ -1,13 +1,19 @@
 package com.codegym.patient_management.rest_controller;
 
+import com.codegym.patient_management.dto.PatientDto;
+import com.codegym.patient_management.dto.PatienterDto;
+import com.codegym.patient_management.model.Patient;
 import com.codegym.patient_management.model.Patienter;
 import com.codegym.patient_management.service.PatienterService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,19 +49,41 @@ public class PatienterRestController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+
     @PutMapping("/{id}")
-    public ResponseEntity<Patienter> update(@PathVariable Integer id, @RequestBody Patienter patienter) {
+    public ResponseEntity<Patienter> update(@PathVariable Integer id, @Validated @RequestBody PatienterDto patienterDto, BindingResult bindingResult) {
         Optional<Patienter> currentPatienter = patienterService.findById(id);
 
-        if (!currentPatienter.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if (bindingResult.hasFieldErrors()) {
+            return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
         }
 
-        BeanUtils.copyProperties(patienter, currentPatienter.get());
+        if (!currentPatienter.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        currentPatienter.get().setName(patienterDto.getName());
 
         patienterService.update(currentPatienter.get());
 
         return new ResponseEntity(currentPatienter.get(), HttpStatus.OK);
     }
+
+
+    //No validate
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Patienter> update(@PathVariable Integer id, @RequestBody Patienter patienter) {
+//        Optional<Patienter> currentPatienter = patienterService.findById(id);
+//
+//        if (!currentPatienter.isPresent()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//
+//        BeanUtils.copyProperties(patienter, currentPatienter.get());
+//
+//        patienterService.update(currentPatienter.get());
+//
+//        return new ResponseEntity(currentPatienter.get(), HttpStatus.OK);
+//    }
 
 }

@@ -2,7 +2,6 @@ package com.codegym.patient_management.rest_controller;
 
 import com.codegym.patient_management.dto.PatientDto;
 import com.codegym.patient_management.model.Patient;
-import com.codegym.patient_management.model.Patienter;
 import com.codegym.patient_management.service.PatientService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +60,7 @@ public class PatientRestController {
 
     @PostMapping
     public ResponseEntity add(@Validated @RequestBody PatientDto patientDto, BindingResult bindingResult) {
+        System.out.println(patientDto.getPatienter());
         if (!patientDto.getDayIn().equals("") && !patientDto.getDayOut().equals("")) {
             new PatientDto().validate(patientDto, bindingResult);
         }
@@ -73,7 +73,7 @@ public class PatientRestController {
 
         BeanUtils.copyProperties(patientDto, patient);
 
-        patient.setPatienter(new Patienter(Integer.parseInt(patientDto.getPatienter())));
+        patient.setPatienter(patientDto.getPatienter());
 
         patient.setDayIn(LocalDate.parse(patientDto.getDayIn()));
 
@@ -84,6 +84,12 @@ public class PatientRestController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    //No validate
+//    @PostMapping
+//    public ResponseEntity add(@RequestBody Patient patient) {
+//        patientService.save(patient);
+//        return new ResponseEntity(HttpStatus.OK);
+//    }
     @PutMapping("/{id}")
     public ResponseEntity<Patient> update(@PathVariable Integer id, @Validated @RequestBody PatientDto patientDto, BindingResult bindingResult) {
         Optional<Patient> currentPatient = patientService.findById(id);
@@ -100,9 +106,7 @@ public class PatientRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        currentPatient.get().setId(patientDto.getId());
-
-        currentPatient.get().setPatienter(new Patienter(Integer.parseInt(patientDto.getPatienter())));
+        currentPatient.get().setPatienter(patientDto.getPatienter());
 
         currentPatient.get().setDayIn(LocalDate.parse(patientDto.getDayIn()));
 
@@ -118,6 +122,22 @@ public class PatientRestController {
 
         return new ResponseEntity(currentPatient.get(), HttpStatus.OK);
     }
+
+    //No validate
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Patient> update(@PathVariable Integer id, @RequestBody Patient patient) {
+//        Optional<Patient> currentPatient = patientService.findById(id);
+//
+//        if (!currentPatient.isPresent()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//
+//        BeanUtils.copyProperties(patient, currentPatient.get());
+//
+//        patientService.save(currentPatient.get());
+//
+//        return new ResponseEntity(currentPatient.get(), HttpStatus.OK);
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Patient> delete(@PathVariable Integer id) {
