@@ -18,14 +18,15 @@ public class PatientServiceImpl implements PatientService {
     public List<Patient> findAllPagination(Integer page) {
         return patientRepository.findAllPagination(page);
     }
+
     @Override
     public List<Patient> findAllNoPagination() {
         return patientRepository.findAllNoPagination();
     }
 
     @Override
-    public List<Patient> search(String doctor, String name, String reason, String method, Integer page) {
-        return patientRepository.search(doctor, name, reason, method, page);
+    public List<Patient> search(String doctor, String name, String reason, String method, String dayIn, String dayOut, Integer page) {
+        return patientRepository.search(doctor, name, reason, method, dayIn, dayOut, page);
     }
 
     @Override

@@ -41,8 +41,8 @@ public class PatientRestController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Patient>> search(@RequestParam(value = "doctor", required = false, defaultValue = "") String doctor, @RequestParam(value = "name", required = false, defaultValue = "") String name, @RequestParam(value = "reason", required = false, defaultValue = "") String reason, @RequestParam(value = "method", required = false, defaultValue = "") String method, @RequestParam(value = "page", required = false) Integer page) {
-        List<Patient> patients = patientService.search(doctor, name, reason, method, page);
+    public ResponseEntity<List<Patient>> search(@RequestParam(value = "doctor", required = false, defaultValue = "") String doctor, @RequestParam(value = "name", required = false, defaultValue = "") String name, @RequestParam(value = "reason", required = false, defaultValue = "") String reason, @RequestParam(value = "method", required = false, defaultValue = "") String method, @RequestParam(value = "dayIn", required = false, defaultValue = "") String dayIn, @RequestParam(value = "dayOut", required = false, defaultValue = "") String dayOut, @RequestParam(value = "page", required = false) Integer page) {
+        List<Patient> patients = patientService.search(doctor, name, reason, method, dayIn, dayOut, page);
         if (patients.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

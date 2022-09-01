@@ -44,7 +44,7 @@ export class PatientService {
     return this.http.delete<Patient>(`${API_URL}/api/v1/patient/${id}`);
   }
 
-  find(page: number, doctor: string, name: string, reason: string, method: string): Observable<Patient[]> {
-    return this.http.get<Patient[]>(API_URL + '/api/v1/patient/search?page=' + page + '&doctor=' + doctor + '&name=' + name + '&reason=' + reason + '&method=' + method);
+  find(page: number, doctor: string, name: string, reason: string, method: string, dayIn: string, dayOut: string): Observable<Patient[]> {
+    return this.http.get<Patient[]>(API_URL + '/api/v1/patient/search?page=' + page + '&doctor=' + doctor + '&name=' + name + '&reason=' + reason + '&method=' + method + '&dayIn=' + dayIn + '&dayOut=' + dayOut);
   }
 }

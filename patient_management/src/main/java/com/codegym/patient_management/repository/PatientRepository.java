@@ -20,8 +20,8 @@ public interface PatientRepository extends JpaRepository<Patient, Integer> {
     @Query(value = "select * from patient", nativeQuery = true)
     List<Patient> findAllNoPagination();
 
-    @Query(value = "select patient.* from patient join patienter on patient.patienter_id = patienter.id where patient.doctor like %:doctor% and patienter.name like %:name% and patient.reason like %:reason% and patient.method like %:method% limit :page, 5", nativeQuery = true)
-    List<Patient> search(@Param("doctor") String doctor, @Param("name") String name, @Param("reason") String reason, @Param("method") String method, @Param("page") Integer page);
+    @Query(value = "select patient.* from patient join patienter on patient.patienter_id = patienter.id where patient.doctor like %:doctor% and patienter.name like %:name% and patient.reason like %:reason% and patient.method like %:method% and day_in between :dayIn and :dayOut and day_out between :dayIn and :dayOut limit :page, 5", nativeQuery = true)
+    List<Patient> search(@Param("doctor") String doctor, @Param("name") String name, @Param("reason") String reason, @Param("method") String method, @Param("dayIn") String dayIn, @Param("dayOut") String dayOut, @Param("page") Integer page);
 
     @Query(value = "select * from patient where id = :id", nativeQuery = true)
     Optional<Patient> findById(@Param("id") Integer id);

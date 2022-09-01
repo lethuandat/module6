@@ -22,6 +22,8 @@ export class PatientListComponent implements OnInit {
   name = '';
   reason: '';
   method: '';
+  dayIn = '1990-01-01';
+  dayOut = '2099-12-31';
 
   constructor(private patientService: PatientService,
               private patienterService: PatienterService,
@@ -70,13 +72,14 @@ export class PatientListComponent implements OnInit {
   }
 
   search() {
-    this.patientService.find((this.indexPagination * 5) - 5, this.doctor, this.name, this.reason, this.method).subscribe(patient => {
-      console.log(patient);
+    this.patientService.find((this.indexPagination * 5) - 5, this.doctor, this.name, this.reason, this.method, this.dayIn, this.dayOut).subscribe(patient => {
       this.patient = patient;
       this.doctor = '';
       this.name = '';
       this.reason = '';
       this.method = '';
+      this.dayIn = '1990-01-01';
+      this.dayOut = '2099-12-31';
     });
   }
 
