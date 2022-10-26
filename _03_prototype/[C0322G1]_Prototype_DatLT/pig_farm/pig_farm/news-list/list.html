@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Trang trại lợn</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+
+</head>
+<body>
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 w-25">
+            <a href=""><img src="../img/0b6f9fcb72d62d9cda012a28b0c1ffb1.jpg" class="ads" alt=""></a>
+        </div>
+        <div class="col-lg-4 col-sm-6 w-25">
+            <a href=""><img src="../img/maxresdefault.jpg" class="ads" alt=""></a>
+        </div>
+        <div class="col-lg-4 col-sm-6 w-25">
+            <a href=""><img src="../img/tải%20xuống.jpg" class="ads" alt=""></a>
+        </div>
+        <div class="col-lg-4 col-sm-6 w-25">
+            <a href=""><img src="../img/H1.jpg" class="ads" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-success mt-3 sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd"
+                      d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Quảng cáo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chuồng nuôi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Thông tin đàn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Thức ăn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kho</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Bênh lý và sinh sản
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item text-success" href="#">Điều trị</a></li>
+                        <li><a class="dropdown-item text-success" href="#">Tiêm phòng</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Thống kê</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Hệ thống
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item text-success" href="#">Nhân viên</a></li>
+                        <li><a class="dropdown-item text-success" href="#">Thông báo</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2 find" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </form>
+            <div class="login">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đăng nhập</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-3">
+    <div class="row">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/cty.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-light">
+                        <h5>Hệ thống trang trại</h5>
+                        <p>Quy mô - Hiện đại - Tiên tiến</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/1viber_image_2019-10-14_12-00-03.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-success">
+                        <h5>Sản phẩm</h5>
+                        <p>Cung cấp lợn giống - lợn thịt chất lượng cao</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="row mt-3">
+                <a href=""><h5 class="text-success">TIN TỨC - SỰ KIỆN</h5></a>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <a href=""><img src="../img/nuoi-lon-hai-duong.jpg" class="card-img-top" alt="..."></a>
+                        <div class="mt-2">
+                            <a href=""><h5 class="card-title">Hải Dương: Người chăn nuôi dè dặt tái đàn lợn phục vụ
+                                Tết</h5></a>
+                            <p class="card-text">Thời điểm này, nhiều hộ chăn nuôi lợn đang rục rịch tái đàn để phục vụ
+                                nhu cầu người tiêu dùng dịp Tết ...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ttsk1.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Quảng Ngãi: Heo chết hàng loạt sau khi tiêm vắc-xin phòng
+                                        dịch tả heo
+                                        châu
+                                        Phi</h6></a>
+                                    <p>Sau khi tiêm vắc-xin phòng dịch tả heo châu Phi, nhiều đàn heo của các hộ dân
+                                        ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ttsk2.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Đề xuất nhiều chính sách hỗ trợ nâng cao hiệu quả chăn
+                                        nuôi</h6></a>
+                                    <p>Bộ NN & PTNT đang dự thảo Nghị định quy định về chính sách đầu tư hỗ trợ nâng cao
+                                        hiệu quả
+                                        chăn nuôi.
+                                        ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ttsk3.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Kinh tế trang trại: Khó tiếp cận nguồn vốn vay ưu đãi</h6>
+                                    </a>
+                                    <p>Hiện nay, phát triển kinh tế trang trại tại Quảng Ngãi đang gặp một số khó khăn,
+                                        trong đó,
+                                        điểm nghẽn
+                                        lớn nhất cần tập trung tháo gỡ là việc tiếp cận nguồn vốn vay ưu ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ttsk4.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Cân nhắc giá thịt heo và thức ăn chăn nuôi</h6></a>
+                                    <p>Ngày 26/7/2022, Văn phòng Chính phủ có Công văn số 4679/VPCP-KTTH về giá thịt heo
+                                        và nguyên
+                                        liệu thức
+                                        ăn chăn nuôi (TĂCN)....</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row mt-3">
+                <a href=""><h5 class="text-success">THÔNG TIN THỊ TRƯỜNG</h5></a>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <a href=""><img src="../img/trai-nai-ha-tinh_1661833070.jpg" class="card-img-top" alt="..."></a>
+                        <div class="mt-2">
+                            <a href=""><h5 class="card-title">Giá sản phẩm chăn nuôi cả nước ngày 31/08/2022</h5></a>
+                            <p class="card-text">Giá sản phẩm chăn nuôi cả nước cập nhật ngày 31/08/2022 ...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/tttt1.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Giá heo hơi hôm nay 31/08/2022</h6></a>
+                                    <p>Giá heo hơi hôm nay 31/08/2022 tại thị trường 3 miền ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/tttt2.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Giá sản phẩm chăn nuôi cả nước ngày 29/08/2022</h6></a>
+                                    <p>Giá sản phẩm chăn nuôi cả nước cập nhật ngày 29/08/2022 ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/tttt3.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Giá sản phẩm chăn nuôi cả nước ngày 29/08/2022</h6></a>
+                                    <p>Giá sản phẩm chăn nuôi cả nước cập nhật ngày 29/08/2022 ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/tttt4.png" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Giá sản phẩm chăn nuôi cả nước ngày 29/08/2022</h6></a>
+                                    <p>Giá sản phẩm chăn nuôi cả nước cập nhật ngày 29/08/2022 ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row mt-3">
+                <a href=""><h5 class="text-success">KIẾN THỨC CHĂN NUÔI</h5></a>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <a href=""><img src="../img/VACXIN.png" class="card-img-top" alt="..."></a>
+                        <div class="mt-2">
+                            <a href=""><h5 class="card-title">Công nghệ SPR trong thiết kế và đánh giá hiệu quả vắc
+                                xin</h5></a>
+                            <p class="card-text">Sự thiếu hiệu quả trong gây đáp ứng miễn dịch là rào cản lớn nhất
+                                ...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ktcn1.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Hạch toán kinh tế chăn nuôi heo thịt công nghiệp trại 1000
+                                        con</h6></a>
+                                    <p>Hiện nay chăn nuôi heo thịt theo hình thức công nghiệp đang được bà con chăn nuôi
+                                        áp dụng rộng rãi và ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ktcn2.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Heo nái giảm ăn khi stress nhiệt</h6></a>
+                                    <p>Heo bị stress nhiệt sẽ dẫn đến giảm lượng ăn vào và ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ktcn3.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Một số mẹo giảm tỉ lệ tử vong ở lợn con</h6></a>
+                                    <p>Tỉ lệ tử vong của lợn ảnh hưởng tiêu cực đến ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/ktcn4.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Chất bổ sung phytogenic: Cách tính chỉ số lợi nhuận sau đầu
+                                        tư</h6></a>
+                                    <p>Các sản phẩm nông nghiệp thương mại toàn cầu có tác động trực tiếp đến ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row mt-3">
+                <a href=""><h5 class="text-success">KHOA HỌC - KĨ THUẬT</h5></a>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <a href=""><img src="../img/nuoi-ga-tha-vuon-bd_1661760730.jpg" class="card-img-top" alt="..."></a>
+                        <div class="mt-2">
+                            <a href=""><h5 class="card-title">Biện pháp giảm chi phí thức ăn chăn nuôi gà thả vườn</h5>
+                            </a>
+                            <p class="card-text">Nuôi gà thả vườn, chi phí thức ăn chiếm 60 - 70% giá thành. Để chăn
+                                nuôi đạt
+                                hiệu quả, sau đây là một số giải pháp giúp người nuôi giảm chi phí thức ăn ...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/khkt1.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Một số giải pháp trọng tâm nhằm giảm chi phí trong chăn
+                                        nuôi</h6></a>
+                                    <p>Giá thức ăn chăn nuôi tăng ở mức quá cao ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/khkt2.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <a href=""><h6>&#8226; Cloramin B là gì và cách sử dụng trong chăn nuôi?</h6></a>
+                                    <p>Cloramin B là hóa chất khử trùng được sử dung rộng rãi trong ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/khkt3.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <a href=""><h6>&#8226; Sử dụng chế phẩm vi sinh trong chăn nuôi heo</h6></a>
+                                    <p>Sử dụng chế phẩm vi sinh phối trộn vào thức ăn cho heo là ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div>
+                                        <a href=""><img src="../img/khkt4.jpg" class="w-100"
+                                                        alt="..."></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <a href=""><h6>&#8226; Quy trình kĩ thuật nuôi vịt bầu cánh trắng thương phẩm</h6>
+                                    </a>
+                                    <p>Vịt bầu cánh trắng được xem là giống vật nuôi có năng suốt cao ...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+            <div class="row mt-5">
+                <img src="../img/b03sm-3.png" alt="">
+            </div>
+            <div class="row mt-5">
+                <img src="../img/chicken.png" alt="">
+            </div>
+            <div class="row mt-5">
+                <img src="../img/chickenfood.jpg" alt="">
+            </div>
+            <div class="row mt-5">
+                <img src="../img/pharma1.jpg" alt="">
+            </div>
+            <div class="row mt-5">
+                <img src="../img/food.jpg" alt="">
+            </div>
+            <div class="row mt-5">
+                <img src="../img/food2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4 bg-success">
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mt-3 map" align="center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.7517909401145!2d108.20754761417001!3d16.07836494346534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421846431fd0fd%3A0x780138ba60fa3aa6!2zMjk1IE5ndXnhu4VuIFThuqV0IFRow6BuaCwgVGhhbmggQsOsbmgsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1661911853461!5m2!1svi!2s"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-lg-8 col-md-12 text-light mt-3">
+            <p><b>Copyright @2022 C0322G1 - Pig Farm</b></p>
+            <p><b>Giấy phép số:</b> 666/GP-TTĐT của Bộ Thông tin và Truyền thông, cấp ngày 30/08/2022.</p>
+            <p><b>Trụ sở:</b> Tầng 10, 295 Nguyễn Tất Thành, P. Thanh Bình, Q. Hải Châu, TP. Đà Nẵng.</p>
+            <p><b>Điện thoại:</b> 0906 06 7530.</p>
+            <p><b>Email:</b> levanle5@gmail.com</p>
+            <p><b>&copy;2022 pigfarm.com.vn</b> giữ bản quyền nội dung trên website này. Ghi rõ nguồn "pigfarm.com.vn"
+                khi
+                bạn phát hành lại thông tin từ website này.</p>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+<button id="myBtn" title="Trở về đầu trang ">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-square"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+    </svg>
+</button>
+
+<script src="../bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="list.js"></script>
+</html>

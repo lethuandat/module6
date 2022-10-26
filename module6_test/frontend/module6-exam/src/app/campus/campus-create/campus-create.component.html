@@ -1,0 +1,58 @@
+<div class="body">
+  <div class="container-fluid">
+  </div>
+  <div class="vc_empty_space" style="height: 64px"><span class="vc_empty_space_inner"></span></div>
+
+  <div class="container">
+    <div class="row formRow">
+      <form class="col-lg-6 formRow_create" [formGroup]="campusForm" (ngSubmit)="submit()">
+        <div class="mb-3 formRow_create_title">
+          <h5><b>THÊM MỚI CƠ SỞ</b></h5>
+        </div>
+        <hr>
+        <div class="formRow_create_content">
+          <div class="mb-3">
+            <label class="form-label">Tên cơ sở <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" (keyup)="checkName($event.target.value)" formControlName="name" placeholder="Nhập tên cơ sở">
+            <div class="form-text">
+              <p *ngIf="campusForm.controls.name.hasError('required') && (campusForm.controls.name.touched || check)">*Vui lòng nhập tên cơ sở.</p>
+              <p class="text-danger" *ngIf="isExitsName == true">*Tên cơ sở đã tồn tại.</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Ngày khai trương <span class="text-danger">*</span> </label>
+            <input type="date" class="form-control" formControlName="date">
+            <div class="form-text">
+              <p *ngIf="campusForm.controls.date.hasError('required') && (campusForm.controls.date.touched || check)">*Vui lòng nhập ngày khai trương.</p>
+              <p *ngIf="campusForm.controls.date.hasError('dateNotExist') && campusForm.controls.date.dirty"> {{ campusForm.controls['date'].errors.message }}</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Địa chỉ <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="address" placeholder="Nhập địa chỉ cơ sở">
+            <div class="form-text">
+              <p *ngIf="campusForm.controls.address.hasError('required') && (campusForm.controls.address.touched || check)">*Vui lòng nhập địa chỉ.</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Người quản lý <span class="text-danger">*</span></label>
+            <select  class="form-select" formControlName="employee">
+              <option selected value="" disabled>---Chọn---</option>
+              <option *ngFor=" let item of employee" [ngValue]="item.id">{{ item.name }}</option>
+            </select>
+            <div class="form-text">
+              <p *ngIf="campusForm.controls.employee.hasError('required') && (campusForm.controls.employee.touched || check)">*Vui lòng chọn người quản lý.</p>
+            </div>
+          </div>
+          <div class="button">
+            <button class="btn btn-outline-danger me-4" routerLink="/campus/list"> Quay Lại</button>
+            <button class="btn btn-outline-info me-4" type="submit"> Thêm Mới </button>
+            <button class="btn btn-outline-secondary" type="reset"> Nhập Lại </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="vc_empty_space" style="height: 64px"><span class="vc_empty_space_inner"></span></div>
+
+</div>
